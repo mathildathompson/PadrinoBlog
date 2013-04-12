@@ -19,11 +19,14 @@ PadrinoBlog::App.controllers :post do
   #   'Hello world!'
   # end
   
-  get :index do
+  get :index do 
     @posts = Post.all
-    render 'posts/index'
+    render 'post/index'
   end
 
-  
+  get :show, :map => '/posts/:author_name/' do
+    @posts = Author.find_by_name(params[:author_name])
+    render 'post/show'
+  end
 
 end

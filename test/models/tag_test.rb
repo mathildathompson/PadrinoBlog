@@ -18,20 +18,20 @@ class TagTest < Test::Unit::TestCase
         assert @tag.post_tag.first.is_a? (PostTag)
     end
 
-    should "have many tag" do
-      assert @tag.respond_to?(:posts)
-      assert_equal 1, @tag.post.length
-    end
+   #  should "have many tag" do
+   #    assert @tag.respond_to?(:posts)
+   #    assert_equal 1, @tag.post.length
+   #  end
 
-  	should "have one invoice" do
-  		assert @tag.respond_to?(:posts)
-        assert_not_nil @tag.post
-        assert @tag.post.is_a?(Post)
-    end
+  	# should "have one invoice" do
+  	# 	assert @tag.respond_to?(:posts)
+   #      assert_not_nil @tag.post
+   #      assert @tag.post.is_a?(Post)
+   #  end
       
       
       # @tag = Tag.new
       # assert_not_nil @tag
-    end
+    
   end
 end

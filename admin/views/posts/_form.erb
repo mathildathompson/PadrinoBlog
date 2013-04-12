@@ -1,25 +1,25 @@
-<% error = @comment.errors.include?(:body) %>
+<% error = @post.errors.include?(:title) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :title, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :title, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+    <span class='help-inline'><%= error ? f.error_message_on(:title) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @post.errors.include?(:body) %>
 <fieldset class='control-group <%= error ? 'has-error' : ''%>'>
   <%= f.label :body, :class => 'control-label' %>
   <div class='controls'>
-    <%= f.text_field :body, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+    <%= f.text_field :body, :class => 'input-xlarge input-with-feedback' %>
     <span class='help-inline'><%= error ? f.error_message_on(:body) : "Ex: a simple text" %></span>
   </div>
 </fieldset>
-<% error = @comment.errors.include?(:author_id) %>
+<% error = @post.errors.include?(:author_id) %>
 <fieldset class='control-group <%= error ? 'has-error' : ''%>'>
   <%= f.label :author_id, :class => 'control-label' %>
   <div class='controls'>
     <%= f.text_field :author_id, :class => 'input-xlarge input-with-feedback' %>
     <span class='help-inline'><%= error ? f.error_message_on(:author_id) : "Ex: a simple text" %></span>
-  </div>
-</fieldset>
-<% error = @comment.errors.include?(:post_id) %>
-<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
-  <%= f.label :post_id, :class => 'control-label' %>
-  <div class='controls'>
-    <%= f.text_field :post_id, :class => 'input-xlarge input-with-feedback' %>
-    <span class='help-inline'><%= error ? f.error_message_on(:post_id) : "Ex: a simple text" %></span>
   </div>
 </fieldset>
 
@@ -29,5 +29,5 @@
   &nbsp;
   <%= f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue' %>
   &nbsp;
-  <%= link_to pat(:cancel), url(:comments, :index), :class => 'btn' %>
+  <%= link_to pat(:cancel), url(:posts, :index), :class => 'btn' %>
 </div>

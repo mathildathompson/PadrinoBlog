@@ -11,12 +11,12 @@ class AuthorTest < Test::Unit::TestCase
   	end
 
     should 'construct new instance' do
-    	assert @author.respond.to?(:posts)
+    	assert @author.respond_to?(:posts)
     	assert_not_nil @author.posts
      end
 
     should 'construct new instance' do
-    	assert @author.respond.to?(:comments)
+    	assert @author.respond_to?(:comments)
     	assert_not_nil @author.comments
      end
 
