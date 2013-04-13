@@ -1,8 +1,30 @@
+<ul>
+    <% @authors.each do |a| %>
+      <li><%= link_to a.name, url_for(:post, :show, :name => a.name)%></li>
+    <% end %>
+  </ul>
+
+
+
 <% @posts.each do |x| %>
+	
+	<b><%= x.title %></b>
+
+	<p>
+
 	<%= x.body %>
+
+    </p>
+
 	  <% end %>
 
-<%= link_to 'author_name', url_for(:post, :show, :author_name => 'MathildaThompson')%>
+
+  
+
+
+
+
+
 
 
 

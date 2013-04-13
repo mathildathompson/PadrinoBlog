@@ -1,1 +1,15 @@
-<%= @posts.name %>
+<% @posts.each do |x| %>
+	
+	<b><%= x.title %></b>
+
+	<p>
+
+	<%= x.body %>
+
+    </p>
+
+	  <% end %>
+
+
+
+
